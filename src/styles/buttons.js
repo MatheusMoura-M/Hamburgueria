@@ -71,3 +71,13 @@ export const ButtonGrey = styled.button`
     }
   }}
 `;
+
+export const ButtonRemove = styled.button`
+  border: none;
+
+  color: var(--grey-3);
+  font-family: var(--font-family);
+  font-weight: var(--fontWei-button);
+  font-size: var(--fontSize-button);
+  line-height: var(--lineHei-button);
+`

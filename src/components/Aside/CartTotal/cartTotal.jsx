@@ -3,12 +3,15 @@ import { ButtonGrey } from '../../../styles/buttons'
 import { ThemeSpan, ThemeTitle } from '../../../styles/typography'
 import { BoxTotal } from './style'
 
-export const CartTotal = () => {
+export const CartTotal = ({currentSale}) => {
+  
+  const total = currentSale.reduce((acc, act) => act.price + acc, 0)
+  
   return (
     <BoxTotal>
       <div>
         <ThemeTitle size="default">Total</ThemeTitle>
-        <ThemeSpan>R$ 40,00</ThemeSpan>
+        <ThemeSpan>{total.toFixed(2)}</ThemeSpan>
       </div>
       <ButtonGrey>Remover todos</ButtonGrey>
     </BoxTotal>

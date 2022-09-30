@@ -1,9 +1,9 @@
 import React from "react";
-import { ThemeSpan, ThemeTitle } from "../../../styles/typography";
+import { ThemeParagraph, ThemeSpan, ThemeTitle } from "../../../styles/typography";
 import { BoxInfo, Card } from "./style";
 import { ButtonRemove } from "../../../styles/buttons";
 
-export const CartProduct = ({ product }) => {
+export const CartProduct = ({ product, removeProducts}) => {
   return (
     <Card id={product.id}>
       <figure>
@@ -15,10 +15,11 @@ export const CartProduct = ({ product }) => {
       </figure>
       <BoxInfo>
         <ThemeTitle size="small">{product.name}</ThemeTitle>
-        <ThemeSpan>{product.category}</ThemeSpan>
+        <ThemeParagraph size="small">{product.category}</ThemeParagraph>
+        <ThemeSpan>Qnt: {product.count}</ThemeSpan>
       </BoxInfo>
-      <ButtonRemove onClick={() => handleClick(product.id)} size="small">
-        Remover
+      <ButtonRemove onClick={() => removeProducts(product.id)} size="small">
+        X
       </ButtonRemove>
     </Card>
   );

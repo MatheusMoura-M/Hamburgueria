@@ -7,8 +7,9 @@ export const BoxCart = styled.div`
   align-items: center;
   justify-content: center;
 
-  min-width: 200px;
+  width: 100%;
   max-width: 100%;
+  min-height: 25%;
   max-height: 90%;
 
   padding: 5px 2px 15px;
@@ -20,10 +21,10 @@ export const BoxCart = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     max-width: 100%;
-    max-height: 100%;
+    max-height: 300px;
 
     padding-bottom: 10px;
 

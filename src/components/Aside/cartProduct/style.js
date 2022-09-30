@@ -8,7 +8,9 @@ export const Card = styled.li`
   gap:5px;
 
   padding: 0.4rem;
-
+  
+  animation: show ease 1.2s 0s 1;
+  
   figure{
     display: flex;
     align-items: center;
@@ -19,6 +21,23 @@ export const Card = styled.li`
 
     max-width: 65px;
     max-height: 65px;
+
+  }
+
+  @keyframes show {
+    0%{
+      opacity: 0;
+      transform: translateX(-25px);
+    }
+
+    50%{
+      opacity: 0.5;
+      transform: translateX(10px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 `
 

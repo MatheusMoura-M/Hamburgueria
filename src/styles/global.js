@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         --color-primary: #27AE60;
         --color-primary-2: #93D7AF;
         --color-secondary: #EB5757;
+        --btn-remove: #ff0000;
         --black: #000000;
         --grey-1: #0a0c0d;
         --grey-2: #333333;
@@ -45,16 +46,20 @@ export const GlobalStyle = createGlobalStyle`
         --font-family: "Inter", sans-serif;
 
         --fontWei-title: 700;
-        --fontSize-title: 18px;
+        --fontSize-title: 16px;
         --fontSize-title-2: 14px;
         --lineHei-title: 24px;
 
         --fontWei-paragraph: 600;
-        --fontSize-paragraph: 14px;
+        --fontWei-paragraph-2: 500;
+        --fontSize-paragraph: 13px;
+        --fontSize-paragraph-2: 12px;
         --lineHei-paragraph: 24px;
 
         --fontWei-span: 400;
+        --fontWei-span-2: 600;
         --fontSize-span: 12px;
+        --fontSize-span-2: 18px;
         --lineHei-span: 16px;
 
         --fontWei-button: 500;
@@ -115,13 +120,26 @@ export const Aside = styled.aside`
   justify-content: flex-start;
   align-items: center;
 
-  min-width: 270px;
+  min-width: 20%;
   max-width: 300px;
   min-height: 300px;
   max-height: 500px;
 
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 26px auto 0 auto;
+
+  animation: show 1.2s ease 0s 1;
+
+  @keyframes show {
+    0%{
+      opacity: 0;
+      transform: translateX(-25px);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
 
 export const DivTitleAside = styled.div`

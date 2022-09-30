@@ -73,11 +73,28 @@ export const ButtonGrey = styled.button`
 `;
 
 export const ButtonRemove = styled.button`
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: var(--btn-remove);
+  color: var(--grey-1);
+  opacity: 0.75;
+  transition: 0.3s;
 
-  color: var(--grey-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 20px;
+  height: 20px;
+
   font-family: var(--font-family);
   font-weight: var(--fontWei-button);
-  font-size: var(--fontSize-button);
+  font-size: 12px;
   line-height: var(--lineHei-button);
+
+  :hover{
+    opacity: 1;
+    transform: scale(1.1);
+  }
 `

@@ -5,17 +5,22 @@ import { CartProduct } from "../cartProduct/cartProduct";
 import { CartTotal } from "../CartTotal/cartTotal";
 import { v4 as uuidv4 } from "uuid";
 
-export const Cart = ({ currentSale }) => {
+export const Cart = ({ currentSale, removeProducts}) => {
   return (
+    currentSale.length >= 1 ?
     <BoxCart>
-      {/* <ThemeTitle>Sua sacola está vazia</ThemeTitle>
-      <ThemeSpan>Adicione itens</ThemeSpan> */}
       <ul>
         {currentSale.map((product) => (
-          <CartProduct product={product} key={uuidv4()} />
+          <CartProduct product={product} key={uuidv4()} removeProducts={removeProducts}/>
         ))}
       </ul>
-      <CartTotal />
+      <CartTotal currentSale={currentSale} />
+    </BoxCart>
+      :
+    <BoxCart>
+      <ThemeTitle size= "small">Sua sacola está vazia</ThemeTitle>
+      <ThemeSpan>Adicione itens</ThemeSpan>
     </BoxCart>
   );
 };
+    

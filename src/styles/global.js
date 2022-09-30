@@ -107,6 +107,10 @@ export const Container = styled(BaseTag)`
             return css`
                 max-width: 1100px;
                 height: 600px;
+
+                @media (max-width: 900px) {
+                    flex-direction: column;
+                }
             `
         default:
             return false

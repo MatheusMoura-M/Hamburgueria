@@ -41,6 +41,11 @@ export const SectionProduct = styled.section`
     min-height: 90%;
 
     animation: show ease 1.2s 0s 1;
+    
+    @media (max-width: 900px) {
+      overflow-x: auto;
+      max-height: 30%;
+    }
   }
 
   @keyframes show {

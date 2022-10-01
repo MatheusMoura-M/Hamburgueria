@@ -9,7 +9,19 @@ export const Card = styled.li`
 
   padding: 0.4rem;
   
-  animation: show ease-in-out 1s 0s 1;
+  transition: .3s;
+  animation: show cubic-bezier(.22,.53,.6,1.6) 1.3s 0s 1;
+  
+  :hover{
+    transition: .4s;
+    box-shadow: 5px 5px 5px 1px var(--grey-4);
+    transform: translateX(-2px) translateY( -2px);
+
+    button{
+      transition: .5s;
+      color: var(--btn-remove);
+    }
+  }
 
   @media (max-width: 970px) {
       justify-content: space-between;
@@ -42,7 +54,7 @@ export const Card = styled.li`
     }
 
     50%{
-      transform: translateX(10px);
+      transform: translateX(5px);
     }
     100%{
       opacity: 1;

@@ -26,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     input, select{
         background: transparent;
         border: none;
-        outline: none;
     } 
 
     :root{

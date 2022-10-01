@@ -46,6 +46,8 @@ export const SectionProduct = styled.section`
     min-width: 100%;
     min-height: 90%;
 
+    padding: 10px;
+
     animation: show ease 1.2s 0s 1;
     
     @media (max-width: 970px) {

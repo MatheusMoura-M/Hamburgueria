@@ -12,7 +12,9 @@ export const BoxCart = styled.div`
   min-height: 25%;
   max-height: 90%;
 
-  padding: 5px 2px 15px;
+  gap:10px;
+
+  padding: 5px 7px 15px 2px;
 
   background: var(--grey-5);
   border-radius: 0 0 0.6rem 0.6rem;
@@ -27,14 +29,30 @@ export const BoxCart = styled.div`
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
-
+    
     max-width: 100%;
-    max-height: 300px;
-
+    max-height: 250px;
+    
     padding: 10px;
+        
+    ::-webkit-scrollbar {
+      width: 0.65rem;
+    }
+  
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 1px 0 5px grey; 
+      border-radius: 0.65rem;
+    }
 
-    border-bottom: 2px solid var(--grey-4);
-
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-primary-2);
+      border-radius: 0.65rem;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-primary);
+    }
+    
     @media (max-width: 970px){
       min-width: 95%;
     }

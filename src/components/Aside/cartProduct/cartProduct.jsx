@@ -6,6 +6,7 @@ import {
 } from "../../../styles/typography";
 import { BoxInfo, Card } from "./style";
 import { ButtonRemove } from "../../../styles/buttons";
+import { IoMdTrash } from "react-icons/io";
 
 export const CartProduct = ({ product, removeProducts }) => {
   return (
@@ -24,8 +25,8 @@ export const CartProduct = ({ product, removeProducts }) => {
           <ThemeSpan>Qnt: {product.count}</ThemeSpan>
         </BoxInfo>
       </div>
-      <ButtonRemove onClick={() => removeProducts(product.id)} size="small">
-        X
+      <ButtonRemove onClick={() => removeProducts(product)} size="small">
+        <IoMdTrash />
       </ButtonRemove>
     </Card>
   );

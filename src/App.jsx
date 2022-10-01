@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Cart } from "./components/Aside/Cart/cart";
-import { Header } from "./components/Cabecalho/Header/Header/header";
+import { Header } from "./components/Cabecalho/Header/header";
 import { ProductsList } from "./components/Cards/ProductsList/productsList";
 import { api } from "./services/api";
 import { Aside, Container, DivTitleAside } from "./styles/global";
@@ -55,21 +55,26 @@ export const App = () => {
 
       setCurrentSale(newElem);
     } else {
+      toast.success(`${newCurrent.name} adicionado(a) ao carrinho`);
       setCurrentSale([...currentSale, newCurrent]);
     }
   };
 
-  const removeProducts = (productId) => {
-    let elem = currentSale.findIndex((elem) => elem.id === productId);
+  const removeProducts = (productt) => {
+    let elem = currentSale.findIndex((elem) => elem.id === productt.id);
     let newElem = [...currentSale];
 
     if (newElem[elem].count > 1) {
       newElem[elem].count = newElem[elem].count - 1;
     } else {
       const filtered = currentSale.filter(
-        product => product.id !== productId && product
+        (product) => product.id !== productt.id && product
       );
-      newElem = filtered
+      newElem = filtered;
+
+      toast.dark(`${productt.name} removido(a) do carrinho`, {
+        position: "bottom-right",
+      });
       setCurrentSale(newElem);
     }
     setCurrentSale(newElem);
@@ -79,10 +84,11 @@ export const App = () => {
     <div className="App">
       <ToastContainer
         position="top-right"
-        autoClose={3000}
+        autoClose={1400}
         hideProgressBar={false}
         newestOnTop={false}
-        closeOnClickrtl={false}
+        closeOnClick
+        rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover

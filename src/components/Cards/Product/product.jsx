@@ -21,7 +21,7 @@ export const Product = ({ product, handleClick }) => {
         <ThemeTitle size="default">{product.name}</ThemeTitle>
         <ThemeSpan>{product.category}</ThemeSpan>
         <ThemeParagraph>
-          {product.id > 4 ? `R$ ${product.price}` : `R$ ${product.price}.00`}
+          {product.id > 4 ? `R$ ${product.price}`.replace(".", ",") : `R$ ${product.price}.00`.replace(".", ",")}
         </ThemeParagraph>
         <ButtonGreen onClick={() => handleClick(product.id)} size="small">
           Adicionar

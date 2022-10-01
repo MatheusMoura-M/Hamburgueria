@@ -11,6 +11,16 @@ export const Card = styled.li`
   
   border: 1px solid var(--grey-4);
   border-radius: 0.4rem;
+  
+  transition: .8s;
+  :hover{
+    box-shadow: 8px 8px 10px 1px var(--grey-4);
+    transform: translateX(-5px) translateY( -5px);
+    
+    img{
+      animation: zoom 1.2s ease-in-out .2s infinite forwards;
+    }
+  }
 
   @media (max-width: 970px) {
       min-width: 250px
@@ -31,7 +41,37 @@ export const Card = styled.li`
       max-height: 100px;
     }
   }
-  `
+
+  @keyframes zoom {
+    0%{
+      transform: rotate(0deg)   scale(1);
+    }
+    13%{
+      transform: rotate(3deg)   scale(1.0375);
+    }
+    25%{
+      transform: rotate(6deg)  scale(1.075);
+    }
+    37%{
+      transform: rotate(3deg)   scale(1.1125);
+    }
+    50%{
+      transform: rotate(0deg)   scale(1.15);
+    }
+    63%{
+      transform: rotate(-3deg)  scale(1.1125);
+    }
+    75%{
+      transform: rotate(-6deg) scale(1.075);
+    }
+    75%{
+      transform: rotate(-3deg)  scale(1.0375);
+    }
+    100%{
+      transform: rotate(0deg)   scale(1);
+    }
+  }
+`
 
 export const BoxInfo = styled.div`
   display:flex;

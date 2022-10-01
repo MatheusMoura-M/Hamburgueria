@@ -14,6 +14,12 @@ export const SectionProduct = styled.section`
   max-height: 534px;
   
   animation: show 1.2s ease 0s 1;
+
+  @media (max-width: 970px){
+    min-height: 55%;
+    max-height: 56%;
+    max-width: 100%;
+  }
   
   .boxPesquisa{
     display: flex;
@@ -42,9 +48,11 @@ export const SectionProduct = styled.section`
 
     animation: show ease 1.2s 0s 1;
     
-    @media (max-width: 900px) {
+    @media (max-width: 970px) {
       overflow-x: auto;
       max-height: 30%;
+      flex-wrap: nowrap;
+      max-width: 95%;
     }
   }
 

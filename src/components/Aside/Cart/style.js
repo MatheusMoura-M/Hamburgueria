@@ -17,6 +17,11 @@ export const BoxCart = styled.div`
   background: var(--grey-5);
   border-radius: 0 0 0.6rem 0.6rem;
 
+  @media (max-width: 970px){
+    min-height: 75%;
+  }
+
+
   ul{
     display: flex;
     flex-direction: column;
@@ -26,8 +31,12 @@ export const BoxCart = styled.div`
     max-width: 100%;
     max-height: 300px;
 
-    padding-bottom: 10px;
+    padding: 10px;
 
     border-bottom: 2px solid var(--grey-4);
+
+    @media (max-width: 970px){
+      min-width: 95%;
+    }
   }
 `

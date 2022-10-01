@@ -1,4 +1,4 @@
-import styled, {css, createGlobalStyle } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 import { BaseTag } from "./components/BaseTag";
 
 export const GlobalStyle = createGlobalStyle`
@@ -93,27 +93,29 @@ export const Container = styled(BaseTag)`
   margin: 0 auto;
   padding: 1rem;
 
-  ${({size}) => {
-    switch (size){
-        case "small":
-            return css`
+  ${({ size }) => {
+    switch (size) {
+      case "small":
+        return css`
                 max-width: 400px;
             `
-        case "defaul":
-            return css`
+      case "defaul":
+        return css`
                 max-width: 800px;
             `
-        case "large":
-            return css`
+      case "large":
+        return css`
                 max-width: 1100px;
-                height: 600px;
+                height: 585px;
 
-                @media (max-width: 900px) {
+                @media (max-width: 970px) {
+                    justify-content: flex-start; 
                     flex-direction: column;
+                    height: 580px;
                 }
             `
-        default:
-            return false
+      default:
+        return false
     }
   }}
 `;
@@ -124,7 +126,7 @@ export const Aside = styled.aside`
   justify-content: flex-start;
   align-items: center;
 
-  min-width: 20%;
+  min-width: 23%;
   max-width: 300px;
   min-height: 300px;
   max-height: 500px;
@@ -132,6 +134,12 @@ export const Aside = styled.aside`
   margin: 26px auto 0 auto;
 
   animation: show 1.2s ease 0s 1;
+
+  @media (max-width: 970px){
+    min-height: 340px;
+    max-height: 45%;
+    min-width: 70%;
+  }
 
   @keyframes show {
     0%{
@@ -156,6 +164,9 @@ export const DivTitleAside = styled.div`
   width: 100%;
   height: 45px;
 
-
   background-color: var(--color-primary);
+
+  @media (max-width: 970px){
+    min-height: 15%;
+  }
 `;

@@ -11,6 +11,10 @@ export const Card = styled.li`
   
   border: 1px solid var(--grey-4);
   border-radius: 0.4rem;
+
+  @media (max-width: 970px) {
+      min-width: 250px
+    }
   
   figure{
     display: flex;

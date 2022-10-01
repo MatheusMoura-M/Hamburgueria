@@ -14,7 +14,6 @@ export const App = () => {
   const [currentSale, setCurrentSale] = useState([]);
   const [inputSearch, setInputSearch] = useState("");
   const [openDiv, setOpenDiv] = useState(false);
-  const [incremento, setIncremento] = useState(1);
 
   useEffect(() => {
     api
@@ -33,12 +32,12 @@ export const App = () => {
     api
       .get("/products")
       .then((resp) => {
-          const newProducts = resp.data.map((elem) => {
-            const newObject = { ...elem, count: 1 };
-            return newObject;
-          });
-          setFilteredProducts(newProducts)
-        })
+        const newProducts = resp.data.map((elem) => {
+          const newObject = { ...elem, count: 1 };
+          return newObject;
+        });
+        setFilteredProducts(newProducts);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -61,10 +60,19 @@ export const App = () => {
   };
 
   const removeProducts = (productId) => {
-    const filtered = currentSale.filter(
-      (product) => product.id !== productId && product
-    );
-    setCurrentSale(filtered);
+    let elem = currentSale.findIndex((elem) => elem.id === productId);
+    let newElem = [...currentSale];
+
+    if (newElem[elem].count > 1) {
+      newElem[elem].count = newElem[elem].count - 1;
+    } else {
+      const filtered = currentSale.filter(
+        product => product.id !== productId && product
+      );
+      newElem = filtered
+      setCurrentSale(newElem);
+    }
+    setCurrentSale(newElem);
   };
 
   return (

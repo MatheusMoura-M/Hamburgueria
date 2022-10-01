@@ -1,4 +1,4 @@
-import styled, {css, createGlobalStyle } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 import { BaseTag } from "./components/BaseTag";
 
 export const GlobalStyle = createGlobalStyle`
@@ -26,13 +26,13 @@ export const GlobalStyle = createGlobalStyle`
     input, select{
         background: transparent;
         border: none;
-        outline: none;
     } 
 
     :root{
         --color-primary: #27AE60;
         --color-primary-2: #93D7AF;
         --color-secondary: #EB5757;
+        --btn-remove: #ff0000;
         --black: #000000;
         --grey-1: #0a0c0d;
         --grey-2: #333333;
@@ -45,16 +45,20 @@ export const GlobalStyle = createGlobalStyle`
         --font-family: "Inter", sans-serif;
 
         --fontWei-title: 700;
-        --fontSize-title: 18px;
+        --fontSize-title: 16px;
         --fontSize-title-2: 14px;
         --lineHei-title: 24px;
 
         --fontWei-paragraph: 600;
-        --fontSize-paragraph: 14px;
+        --fontWei-paragraph-2: 500;
+        --fontSize-paragraph: 13px;
+        --fontSize-paragraph-2: 12px;
         --lineHei-paragraph: 24px;
 
         --fontWei-span: 400;
+        --fontWei-span-2: 600;
         --fontSize-span: 12px;
+        --fontSize-span-2: 18px;
         --lineHei-span: 16px;
 
         --fontWei-button: 500;
@@ -88,23 +92,29 @@ export const Container = styled(BaseTag)`
   margin: 0 auto;
   padding: 1rem;
 
-  ${({size}) => {
-    switch (size){
-        case "small":
-            return css`
+  ${({ size }) => {
+    switch (size) {
+      case "small":
+        return css`
                 max-width: 400px;
             `
-        case "defaul":
-            return css`
+      case "defaul":
+        return css`
                 max-width: 800px;
             `
-        case "large":
-            return css`
+      case "large":
+        return css`
                 max-width: 1100px;
-                height: 600px;
+                height: 585px;
+
+                @media (max-width: 970px) {
+                    justify-content: flex-start; 
+                    flex-direction: column;
+                    height: 580px;
+                }
             `
-        default:
-            return false
+      default:
+        return false
     }
   }}
 `;
@@ -115,13 +125,32 @@ export const Aside = styled.aside`
   justify-content: flex-start;
   align-items: center;
 
-  min-width: 270px;
+  min-width: 23%;
   max-width: 300px;
   min-height: 300px;
   max-height: 500px;
 
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 26px auto 0 auto;
+
+  animation: show 1.2s ease 0s 1;
+
+  @media (max-width: 970px){
+    min-height: 340px;
+    max-height: 45%;
+    min-width: 70%;
+  }
+
+  @keyframes show {
+    0%{
+      opacity: 0;
+      transform: translateX(-25px);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
 
 export const DivTitleAside = styled.div`
@@ -134,6 +163,9 @@ export const DivTitleAside = styled.div`
   width: 100%;
   height: 45px;
 
-
   background-color: var(--color-primary);
+
+  @media (max-width: 970px){
+    min-height: 15%;
+  }
 `;

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const ButtonGreen = styled.button`
   border-radius: 8px;
   background: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-primary-2);
   color: var(--white);
 
   display: flex;
@@ -17,6 +17,16 @@ export const ButtonGreen = styled.button`
   font-weight: var(--fontWei-button);
   font-size: var(--fontSize-button);
   line-height: var(--lineHei-button);
+
+  transition: .5s;
+
+  :hover{
+    opacity: 1;
+    transform: scale(1.1);
+    background: var(--color-primary-2);
+    border: 2px solid var(--color-primary);
+    color: var(--grey-1);
+  }
 
   ${({ size }) => {
     switch (size) {
@@ -73,11 +83,29 @@ export const ButtonGrey = styled.button`
 `;
 
 export const ButtonRemove = styled.button`
-  border: none;
+  color: var(--grey-1);
+  opacity: 0.7;
 
-  color: var(--grey-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 17px;
+  height: 17px;
+
   font-family: var(--font-family);
   font-weight: var(--fontWei-button);
-  font-size: var(--fontSize-button);
+  font-size: 12px;
   line-height: var(--lineHei-button);
+
+  :hover{
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  svg{
+    width: 100%;
+    height: 100%;
+  }
 `

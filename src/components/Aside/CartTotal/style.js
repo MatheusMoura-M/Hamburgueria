@@ -10,6 +10,13 @@ export const BoxTotal = styled.div`
   width: 100%;
   height: 85px;
 
+  border-top: 2px solid var(--grey-4);
+
+
+  @media (max-width: 970px){
+    margin-top: 15px;
+  }
+
   div{
     display: flex;
     flex-direction: row;

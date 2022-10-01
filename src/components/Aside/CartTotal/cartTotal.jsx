@@ -1,17 +1,19 @@
-import React from 'react'
-import { ButtonGrey } from '../../../styles/buttons'
-import { ThemeSpan, ThemeTitle } from '../../../styles/typography'
-import { BoxTotal } from './style'
+import React from "react";
+import { ButtonGreen } from "../../../styles/buttons";
+import { ThemeSpan, ThemeTitle } from "../../../styles/typography";
+import { BoxTotal } from "./style";
 
-export const CartTotal = () => {
+export const CartTotal = ({ currentSale }) => {
+  const price = currentSale.map((elem) => elem.price * elem.count);
+  const total = price.reduce((acc, act) => act + acc, 0);
+
   return (
     <BoxTotal>
       <div>
         <ThemeTitle size="default">Total</ThemeTitle>
-        <ThemeSpan>R$ 40,00</ThemeSpan>
+        <ThemeSpan>{`R$ ${total.toFixed(2)}`.replace(".", ",")}</ThemeSpan>
       </div>
-      <ButtonGrey>Remover todos</ButtonGrey>
+      <ButtonGreen>Finalizar</ButtonGreen>
     </BoxTotal>
-  )
-}
-
+  );
+};

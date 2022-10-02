@@ -84,4 +84,79 @@ export const BoxInfo = styled.div`
   min-height: 115px;
   
   padding: 0.5rem;
-  `
+
+  .animeTitle{
+
+    overflow: hidden;
+    position: relative;
+    
+    &::after{
+    animation: textReveal 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+    background-color: var(--grey-3);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-105%);
+    }
+    
+    @keyframes textReveal {
+      to {
+        transform: translateX(101%);
+      }
+    }
+  
+  }
+
+  .animeSpan{
+    
+    overflow: hidden;
+    position: relative;
+    
+    &::after{
+    animation: textReveal 1s 0.5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+    background-color: var(--grey-4);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-105%);
+    }
+    
+    @keyframes textReveal {
+      to {
+        transform: translateX(101%);
+      }
+    }
+  }
+
+  .animeParagraph{
+    overflow: hidden;
+    position: relative;
+
+    &::after{
+      animation: textReveal 1s 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+      background-color: var(--color-primary-2);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-105%);
+    }
+
+    @keyframes textReveal {
+      to {
+        transform: translateX(101%);
+      }
+    }
+  }
+`

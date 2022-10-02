@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  ThemeParagraph,
-  ThemeSpan,
-  ThemeTitle,
+  NewThemeParagraph,
+  NewThemeSpan,
+  NewThemeTitle,
 } from "../../../styles/typography";
 import { BoxInfo, Card } from "./style";
 import { ButtonGreen } from "../../../styles/buttons";
@@ -18,11 +18,19 @@ export const Product = ({ product, handleClick }) => {
         />
       </figure>
       <BoxInfo>
-        <ThemeTitle size="default">{product.name}</ThemeTitle>
-        <ThemeSpan>{product.category}</ThemeSpan>
-        <ThemeParagraph>
-          {product.id > 4 ? `R$ ${product.price}`.replace(".", ",") : `R$ ${product.price}.00`.replace(".", ",")}
-        </ThemeParagraph>
+        <div className="animeTitle">
+          <NewThemeTitle size="default">{product.name}</NewThemeTitle>
+        </div>
+        <div className="animeSpan">
+          <NewThemeSpan>{product.category}</NewThemeSpan>
+        </div>
+        <div className="animeParagraph">
+          <NewThemeParagraph>
+            {product.id > 4
+              ? `R$ ${product.price}`.replace(".", ",")
+              : `R$ ${product.price}.00`.replace(".", ",")}
+          </NewThemeParagraph>
+        </div>
         <ButtonGreen onClick={() => handleClick(product.id)} size="small">
           Adicionar
         </ButtonGreen>

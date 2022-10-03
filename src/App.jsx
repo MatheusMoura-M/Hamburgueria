@@ -46,9 +46,9 @@ export const App = () => {
       (product) => product.id === productId && product
     );
 
-    const animation = document.querySelector(".animeTitle")
-    animation.children[0].setAttribute("style", "color:red")
-    console.log(animation.children[0])
+    // const animation = document.querySelector(".animeTitle")
+    // animation.children[0].setAttribute("style", "color:red")
+    // console.log(animation.children[0])
 
     const validation = currentSale.some((elem) => elem.id === newCurrent.id);
 

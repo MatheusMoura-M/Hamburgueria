@@ -15,9 +15,6 @@ max-height: 534px;
 
 animation: show 1.2s ease 0s 1;
 
-  @media (max-width: 998px) {
-    /* margin-top: 15rem; */
-  }
   @media (max-width: 970px){
     min-height: 55%;
     max-height: 56%;

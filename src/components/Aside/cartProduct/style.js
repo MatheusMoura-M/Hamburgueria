@@ -17,8 +17,11 @@ export const Card = styled.li`
     box-shadow: 5px 5px 5px 1px var(--grey-4);
     transform: translateX(-2px) translateY( -2px);
 
-    button{
-      transition: .5s;
+  }
+  button{
+    transition: .5s;
+  
+    &:hover{
       color: var(--btn-remove);
     }
   }

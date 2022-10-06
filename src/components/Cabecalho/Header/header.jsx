@@ -4,6 +4,8 @@ import { Logo } from "../Logo/logo";
 import { Cabecalho } from "./style";
 
 export const Header = ({
+  setMargin,
+  setAnimation,
   setOpenDiv,
   showProducts,
   filteredProducts,
@@ -15,6 +17,8 @@ export const Header = ({
     <Cabecalho>
       <Logo />
       <Input
+        setMargin={setMargin}
+        setAnimation={setAnimation}
         setOpenDiv={setOpenDiv}
         showProducts={showProducts}
         filteredProducts={filteredProducts}

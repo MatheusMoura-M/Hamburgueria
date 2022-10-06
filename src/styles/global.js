@@ -29,15 +29,15 @@ export const GlobalStyle = createGlobalStyle`
     } 
 
     :root{
-        --color-primary: #27AE60;
-        --color-primary-2: #93D7AF;
+        --color-primary: #d94040;
+        --color-primary-2: #f37a67;
         --color-secondary: #EB5757;
-        --btn-remove: #ff0000;
+        --btn-remove: #f11616d9;
         --black: #000000;
         --grey-1: #0a0c0d;
         --grey-2: #333333;
         --grey-3: #828282;
-        --grey-4: #E0E0E0;
+        --grey-4: #c9c4c4;
         --grey-5: #F5F5F5;
         --opaco: rgb(33, 37, 41, 0.5);
         --white: #ffffff;
@@ -67,21 +67,20 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background: var(--white);
-        min-height: 100vh;
-        min-width: 100%;
+      background: var(--white);
+      min-height: 100vh;
+      min-width: 100%;
+      background: #ebdace;
+    
+      @media (max-width: 970px) {
+        min-height: 137vh;
+      }
     }
 
     h1, h2, h3, h4, h5, h6, p, span, li{
     font-family: 'Inter', sans-serif;
     color: var(--color-white);
     }
-`;
-
-export const Main = styled.main`
-  width: 100%;
-  margin: 0 auto;
-  padding: 1rem;
 `;
 
 export const Container = styled(BaseTag)`
@@ -137,7 +136,10 @@ export const Aside = styled.aside`
   @media (max-width: 970px){
     min-height: 340px;
     max-height: 45%;
-    min-width: 70%;
+    min-width: 75%;
+  }
+  @media (max-width: 800px){
+    min-width: 97%;
   }
 
   @keyframes show {

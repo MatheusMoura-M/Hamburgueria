@@ -1,6 +1,6 @@
 import React from "react";
 import { Product } from "../Product/product";
-import { SectionProduct } from "./style";
+import { SectionProduct, UlProducts } from "./style";
 import { v4 as uuidv4 } from "uuid";
 import { ButtonGreen } from "../../../styles/buttons";
 import { ThemeSpan, ThemeTitle } from "../../../styles/typography";
@@ -13,7 +13,10 @@ export const ProductsList = ({
   products,
   handleClick,
   inputSearch,
-  setInputSearch
+  setInputSearch,
+  animation,
+  margin,
+  setMargin,
 }) => {
 
   const showProductsDeafult = (event) => {
@@ -22,6 +25,7 @@ export const ProductsList = ({
     setProducts(filteredProducts);
     setInputSearch("")
     setOpenDiv(false)
+    setMargin(true)
   };
 
   return (
@@ -37,11 +41,11 @@ export const ProductsList = ({
           </ButtonGreen>
         </div>
       )}
-      <ul>
+      <UlProducts margin={margin}>
         {products.map((product) => (
-          <Product handleClick={handleClick} product={product} key={uuidv4()} />
+          <Product animation={animation} handleClick={handleClick} product={product} key={uuidv4()} />
         ))}
-      </ul>
+      </UlProducts>
     </SectionProduct>
   );
 };

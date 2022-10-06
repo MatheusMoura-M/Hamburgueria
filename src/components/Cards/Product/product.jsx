@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NewThemeParagraph,
   NewThemeSpan,
@@ -7,7 +7,8 @@ import {
 import { BoxInfo, Card } from "./style";
 import { ButtonGreen } from "../../../styles/buttons";
 
-export const Product = ({ product, handleClick }) => {
+export const Product = ({ animation, product, handleClick }) => {
+
   return (
     <Card id={product.id}>
       <figure>
@@ -19,13 +20,13 @@ export const Product = ({ product, handleClick }) => {
       </figure>
       <BoxInfo>
         <div className="animeTitle">
-          <NewThemeTitle size="default">{product.name}</NewThemeTitle>
+          <NewThemeTitle animation={animation} size="default">{product.name}</NewThemeTitle>
         </div>
         <div className="animeSpan">
-          <NewThemeSpan>{product.category}</NewThemeSpan>
+          <NewThemeSpan animation={animation} >{product.category}</NewThemeSpan>
         </div>
         <div className="animeParagraph">
-          <NewThemeParagraph>
+          <NewThemeParagraph animation={animation}>
             {product.id > 4
               ? `R$ ${product.price}`.replace(".", ",")
               : `R$ ${product.price}.00`.replace(".", ",")}

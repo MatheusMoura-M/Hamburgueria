@@ -14,6 +14,8 @@ export const App = () => {
   const [currentSale, setCurrentSale] = useState([]);
   const [inputSearch, setInputSearch] = useState("");
   const [openDiv, setOpenDiv] = useState(false);
+  const [animation, setAnimation] = useState(true)
+  const [margin, setMargin] = useState(true)
 
   useEffect(() => {
     api
@@ -46,10 +48,6 @@ export const App = () => {
       (product) => product.id === productId && product
     );
 
-    // const animation = document.querySelector(".animeTitle")
-    // animation.children[0].setAttribute("style", "color:red")
-    // console.log(animation.children[0])
-
     const validation = currentSale.some((elem) => elem.id === newCurrent.id);
 
     if (validation) {
@@ -62,6 +60,8 @@ export const App = () => {
       toast.success(`${newCurrent.name} adicionado(a) ao carrinho`);
       setCurrentSale([...currentSale, newCurrent]);
     }
+
+    setAnimation(false)
   };
 
   const removeProducts = (productt) => {
@@ -103,6 +103,8 @@ export const App = () => {
         setProducts={setProducts}
         inputSearch={inputSearch}
         setInputSearch={setInputSearch}
+        setAnimation={setAnimation}
+        setMargin={setMargin}
       />
       <Container tag="main" size="large">
         <ProductsList
@@ -114,7 +116,10 @@ export const App = () => {
           setInputSearch={setInputSearch}
           products={products}
           handleClick={handleClick}
-        />
+          animation={animation}
+          margin={margin}
+          setMargin={setMargin}
+          />
         <Aside>
           <DivTitleAside>
             <ThemeTitle size="default">Carrinho de compras</ThemeTitle>

@@ -4,9 +4,9 @@ export const NewThemeTitle = styled.h2`
   font-family: var(--font-family);
   font-weight: var(--fontWei-title);
   line-height: var(--lineHei-title);
-  opacity: 0;
-  animation: appearText 1ms 0.5s forwards;
-  
+  opacity: ${(props) => props.animation && "0"};
+  animation: ${(props) => props.animation && "appearText 1ms 0.4s forwards;"};
+    
   @keyframes appearText {
     to {
       opacity: 1 
@@ -53,8 +53,8 @@ export const ThemeTitle = styled.h2`
 export const NewThemeParagraph = styled.p`
   font-family: var(--font-family);
   line-height: var(--lineHei-paragraph);
-  opacity: 0;
-  animation: appearText 1ms 1.5s forwards;
+  opacity: ${(props) => props.animation && "0"};
+  animation: ${(props) => props.animation && "appearText 1ms 1.5s forwards;"};
   
   @keyframes appearText {
     to {
@@ -104,8 +104,8 @@ export const NewThemeSpan = styled.span`
   font-family: var(--font-family);
   line-height: var(--lineHei-span);
   color: var(--grey-3);
-  opacity: 0;
-  animation: appearText 1ms 1s forwards;
+  opacity: ${(props) => props.animation && "0"};
+  animation: ${(props) => props.animation && "appearText 1ms 1s forwards;"};
   
   @keyframes appearText {
     to {

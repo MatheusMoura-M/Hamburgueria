@@ -8,7 +8,7 @@ export const Cabecalho = styled.header`
 
   width: 100%;
   height: 60px;
-  background: var(--grey-5);
+  background: #fffefebd;
   box-shadow: 5px 6px 23px 0px #cd22229e;
 
   @media (max-width: 540px){

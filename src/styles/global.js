@@ -56,7 +56,7 @@ export const GlobalStyle = createGlobalStyle`
         --lineHei-paragraph: 24px;
 
         --fontWei-span: 400;
-        --fontWei-span-2: 600;
+        --fontWei-span-2: 500;
         --fontSize-span: 12px;
         --fontSize-span-2: 18px;
         --lineHei-span: 16px;

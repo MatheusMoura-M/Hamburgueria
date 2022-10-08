@@ -120,6 +120,12 @@ export const NewThemeSpan = styled.span`
           font-weight: var(--fontWei-span-2);
           font-size: var(--fontSize-span-2);
           `
+      case "spanBig":
+        return css`
+          font-weight: var(--fontWei-span-2);
+          font-size: var(--fontSize-span);
+          color: #524e4ee0;
+          `
       default:
         return css`
           font-weight: var(--fontWei-span);

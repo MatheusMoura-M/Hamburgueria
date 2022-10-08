@@ -23,7 +23,7 @@ export const Product = ({ animation, product, handleClick }) => {
           <NewThemeTitle animation={animation} size="default">{product.name}</NewThemeTitle>
         </div>
         <div className="animeSpan">
-          <NewThemeSpan animation={animation} >{product.category}</NewThemeSpan>
+          <NewThemeSpan size="spanBig" animation={animation} >{product.category}</NewThemeSpan>
         </div>
         <div className="animeParagraph">
           <NewThemeParagraph animation={animation}>

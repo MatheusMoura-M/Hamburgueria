@@ -25,11 +25,11 @@ export const ProductsList = ({
     setProducts(filteredProducts);
     setInputSearch("")
     setOpenDiv(false)
-    setMargin(true)
+    setMargin(false)
   };
 
   return (
-    <SectionProduct>
+    <SectionProduct margin={margin}>
       {openDiv !== false && inputSearch !== "" && (
         <div className="boxPesquisa">
           <ThemeTitle size="default">Resultados para: <ThemeSpan size="big">{inputSearch}</ThemeSpan> </ThemeTitle>

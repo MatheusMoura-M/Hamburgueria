@@ -11,7 +11,7 @@ export const Input = ({setMargin, setAnimation, setOpenDiv, filteredProducts, se
     setOpenDiv(true)
     setProducts(filtered)
     setAnimation(false)
-    setMargin(false)
+    setMargin(true)
   }
 
   const functionOnChange = (event) =>{

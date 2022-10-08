@@ -13,6 +13,8 @@ min-width: 60%;
 max-width: 65%;
 max-height: 534px;
 
+/* margin-top: ${(props) => props.margin && "15rem"}; */
+
 animation: show 1.2s ease 0s 1;
 
   @media (max-width: 970px){
@@ -63,6 +65,7 @@ export const UlProducts = styled.ul`
 
   min-width: 100%;
   min-height: 90%;
+  max-height: 90%;
   
   padding: 10px;
   
@@ -70,7 +73,7 @@ export const UlProducts = styled.ul`
   
   @media (max-width: 998px) {
     min-height: auto;
-    margin-top: ${(props) => props.margin && "15rem"};
+    /* margin-top: ${(props) => props.margin && "15rem"}; */
   }
   @media (max-width: 970px) {
     overflow-x: auto;
